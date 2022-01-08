@@ -5,7 +5,9 @@
   "refmap": "mixins.betterstacks.refmap.json",
   "mixins": [
     "MixinContainer",
-    "MixinItemProperties"
+    "MixinStackedContents",
+    "MixinItemProperties",
+    "MixinItemStack"
   ],
   "minVersion": "0.8",
   "client": [

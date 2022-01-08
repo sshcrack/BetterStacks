@@ -13,6 +13,7 @@ public class BetterStacks
 {
     private boolean hadPostInit;
     public static final int MAX_STACK_SIZE = 10000;
+    public static final String COUNT_ID = "CountBetterStacks";
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
