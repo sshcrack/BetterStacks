@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "me.sshcrack.betterstacks.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.betterstacks.refmap.json",
+  "mixins": [
+    "MixinContainer",
+    "MixinItemProperties"
+  ],
+  "minVersion": "0.8",
+  "client": [
+    "MixinItemRenderer"
+  ]
+}
