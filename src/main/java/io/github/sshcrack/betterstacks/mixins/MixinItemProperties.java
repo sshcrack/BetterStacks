@@ -16,43 +16,10 @@ public class MixinItemProperties {
     int maxStackSize;
 
     @Inject(
-            method = "<init>",
-            at = @At("RETURN")
-    )
-    public void init(CallbackInfo ci) {
-        this.maxStackSize = BetterStacks.MAX_STACK_SIZE;
-    }
-
-    @Inject(
             method = "tab",
             at = @At("RETURN")
     )
     public void tab(CreativeModeTab currTab, CallbackInfoReturnable<Item.Properties> cir) {
-        CreativeModeTab[] buildingBlocks = new CreativeModeTab[]{
-                CreativeModeTab.TAB_BUILDING_BLOCKS
-        };
-
-        boolean contains = false;
-        this.maxStackSize = BetterStacks.MAX_STACK_SIZE;
-        /*
-        for( CreativeModeTab tab : buildingBlocks) {
-            if(tab == currTab) {
-                contains = true;
-                break;
-            }
-        }
-        if (!contains)
-            return;
-
-        this.maxStackSize = BetterStacks.MAX_STACK_SIZE;
-        */
-    }
-
-    @Inject(
-            method = "stacksTo",
-            at = @At("RETURN")
-    )
-    public void stacksTo(int maxStackSize, CallbackInfoReturnable<Item.Properties> cir) {
-        this.maxStackSize = BetterStacks.MAX_STACK_SIZE;
+        this.maxStackSize = BetterStacks.getMaxStackSize(currTab);
     }
 }

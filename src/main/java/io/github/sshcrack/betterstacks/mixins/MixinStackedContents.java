@@ -15,7 +15,7 @@ public abstract class MixinStackedContents {
                     target = "Lnet/minecraft/world/entity/player/StackedContents;accountStack(Lnet/minecraft/world/item/ItemStack;I)V"
             ),
             method = "accountStack(Lnet/minecraft/world/item/ItemStack;)V")
-    public void accountStackRedirect(StackedContents contents, ItemStack p_36469_, int p_36470_) {
-        contents.accountStack(p_36469_, BetterStacks.MAX_STACK_SIZE);
+    public void accountStackRedirect(StackedContents contents, ItemStack item, int p_36470_) {
+        contents.accountStack(item, BetterStacks.getMaxStackSize(item));
     }
 }
